@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcomeController : UIViewController
+@interface WelcomeController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-- (IBAction)citySelected:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

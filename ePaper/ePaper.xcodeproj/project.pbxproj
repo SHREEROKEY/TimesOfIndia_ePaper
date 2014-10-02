@@ -13,6 +13,7 @@
 		0600C20519CC472800756DB8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0600C20419CC472800756DB8 /* CoreFoundation.framework */; };
 		0600C20719CC473000756DB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0600C20619CC473000756DB8 /* UIKit.framework */; };
 		0621725919CC96520053D5AB /* ArticleViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0621725819CC96520053D5AB /* ArticleViewerController.m */; };
+		062531A119DC26E70048DAFF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 062531A019DC26E70048DAFF /* MyButton.m */; };
 		063EAA5C19DBAAFF00150BE8 /* StoredDataListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EAA5B19DBAAFF00150BE8 /* StoredDataListController.m */; };
 		06435CCF19CC27070031F5A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06435CCE19CC27070031F5A1 /* main.m */; };
 		06435CD219CC27070031F5A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06435CD119CC27070031F5A1 /* AppDelegate.m */; };
@@ -24,6 +25,9 @@
 		069F74A919CC29E700BBF955 /* ThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F74A819CC29E700BBF955 /* ThumbnailCell.m */; };
 		069F74AC19CC2A0400BBF955 /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F74AB19CC2A0400BBF955 /* ArticleCell.m */; };
 		069F74B219CC2A3400BBF955 /* FetchDayIndexData.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F74B019CC2A3400BBF955 /* FetchDayIndexData.m */; };
+		06C84C5E19DC56C700A5F101 /* Edition.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C84C5D19DC56C700A5F101 /* Edition.m */; };
+		06C84C6019DC5AD000A5F101 /* EditionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C84C5F19DC5AD000A5F101 /* EditionCell.xib */; };
+		06C84C6319DC5BC800A5F101 /* EditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C84C6219DC5BC800A5F101 /* EditionCell.m */; };
 		06EC8C8719CD4EFD004DBD4E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8519CD4EFD004DBD4E /* iTunesArtwork.png */; };
 		06EC8C8819CD4EFD004DBD4E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8619CD4EFD004DBD4E /* iTunesArtwork@2x.png */; };
 		06EC8C8A19CD50AF004DBD4E /* toiepaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8919CD50AF004DBD4E /* toiepaper.png */; };
@@ -46,6 +50,8 @@
 		0600C20619CC473000756DB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0621725719CC96520053D5AB /* ArticleViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewerController.h; sourceTree = "<group>"; };
 		0621725819CC96520053D5AB /* ArticleViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewerController.m; sourceTree = "<group>"; };
+		0625319F19DC26E70048DAFF /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		062531A019DC26E70048DAFF /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 		063EAA5A19DBAAFF00150BE8 /* StoredDataListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoredDataListController.h; sourceTree = "<group>"; };
 		063EAA5B19DBAAFF00150BE8 /* StoredDataListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoredDataListController.m; sourceTree = "<group>"; };
 		06435CC919CC27070031F5A1 /* ePaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ePaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,11 @@
 		069F74AB19CC2A0400BBF955 /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
 		069F74AF19CC2A3400BBF955 /* FetchDayIndexData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchDayIndexData.h; sourceTree = "<group>"; };
 		069F74B019CC2A3400BBF955 /* FetchDayIndexData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchDayIndexData.m; sourceTree = "<group>"; };
+		06C84C5C19DC56C700A5F101 /* Edition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edition.h; sourceTree = "<group>"; };
+		06C84C5D19DC56C700A5F101 /* Edition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Edition.m; sourceTree = "<group>"; };
+		06C84C5F19DC5AD000A5F101 /* EditionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditionCell.xib; sourceTree = "<group>"; };
+		06C84C6119DC5BC800A5F101 /* EditionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditionCell.h; sourceTree = "<group>"; };
+		06C84C6219DC5BC800A5F101 /* EditionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditionCell.m; sourceTree = "<group>"; };
 		06EC8C8519CD4EFD004DBD4E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		06EC8C8619CD4EFD004DBD4E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		06EC8C8919CD50AF004DBD4E /* toiepaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toiepaper.png; path = ../toiepaper.png; sourceTree = "<group>"; };
@@ -99,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		062531A219DC26F40048DAFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0625319F19DC26E70048DAFF /* MyButton.h */,
+				062531A019DC26E70048DAFF /* MyButton.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		06435CC019CC27070031F5A1 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +140,7 @@
 			children = (
 				06435CD019CC27070031F5A1 /* AppDelegate.h */,
 				06435CD119CC27070031F5A1 /* AppDelegate.m */,
+				062531A219DC26F40048DAFF /* Views */,
 				06FA308219DC00E800407865 /* Resources */,
 				06FA308019DBF85A00407865 /* Model */,
 				06FA307F19DBF83900407865 /* Operations */,
@@ -166,6 +187,8 @@
 				069F74AB19CC2A0400BBF955 /* ArticleCell.m */,
 				06FA307119DBB6B500407865 /* DayDetailCell.h */,
 				06FA307219DBB6B500407865 /* DayDetailCell.m */,
+				06C84C6119DC5BC800A5F101 /* EditionCell.h */,
+				06C84C6219DC5BC800A5F101 /* EditionCell.m */,
 			);
 			name = "Table Cell Views";
 			sourceTree = "<group>";
@@ -194,6 +217,8 @@
 				0600C1FE19CC44E200756DB8 /* Article.m */,
 				06FA307419DBB72500407865 /* DayDetail.h */,
 				06FA307519DBB72500407865 /* DayDetail.m */,
+				06C84C5C19DC56C700A5F101 /* Edition.h */,
+				06C84C5D19DC56C700A5F101 /* Edition.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -219,6 +244,7 @@
 				06435CD619CC27070031F5A1 /* Main.storyboard */,
 				06435CD919CC27070031F5A1 /* Images.xcassets */,
 				06435CDB19CC27070031F5A1 /* LaunchScreen.xib */,
+				06C84C5F19DC5AD000A5F101 /* EditionCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -254,6 +280,7 @@
 				TargetAttributes = {
 					06435CC819CC27070031F5A1 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = C8HB9W97XD;
 					};
 				};
 			};
@@ -286,6 +313,7 @@
 				06435CDD19CC27070031F5A1 /* LaunchScreen.xib in Resources */,
 				06EC8C8719CD4EFD004DBD4E /* iTunesArtwork.png in Resources */,
 				06435CDA19CC27070031F5A1 /* Images.xcassets in Resources */,
+				06C84C6019DC5AD000A5F101 /* EditionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +333,11 @@
 				069F74A919CC29E700BBF955 /* ThumbnailCell.m in Sources */,
 				06435CD219CC27070031F5A1 /* AppDelegate.m in Sources */,
 				0621725919CC96520053D5AB /* ArticleViewerController.m in Sources */,
+				062531A119DC26E70048DAFF /* MyButton.m in Sources */,
 				0600C1FC19CC449D00756DB8 /* Page.m in Sources */,
 				069F74AC19CC2A0400BBF955 /* ArticleCell.m in Sources */,
+				06C84C6319DC5BC800A5F101 /* EditionCell.m in Sources */,
+				06C84C5E19DC56C700A5F101 /* Edition.m in Sources */,
 				069F74A319CC27EA00BBF955 /* MainViewController.m in Sources */,
 				06F5A0CC19DACAA000154E55 /* DownloadArticleImage.m in Sources */,
 				069F74A619CC28F300BBF955 /* ArticleListController.m in Sources */,
@@ -432,6 +463,7 @@
 				INFOPLIST_FILE = ePaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -449,6 +481,7 @@
 				INFOPLIST_FILE = ePaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

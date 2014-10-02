@@ -39,7 +39,7 @@
             DayDetail* detail = [[DayDetail alloc] init];
             NSDate *date = [dateFormat dateFromString:folderName];
             detail.date = [dateDisplayFormat stringFromDate:date];
-            detail.size = [NSString stringWithFormat:@"%ld Mb", size];
+            detail.size = [NSString stringWithFormat:@"%ld Mb", (long)size];
             detail.folderPath = subFolder;
             // add it to the array
             [details addObject:detail];
@@ -76,7 +76,9 @@
         fileSize += [fileDictionary fileSize];
     }
     
-    return (fileSize / (1024 * 1024));
+    NSInteger tempSize = (int)(fileSize / (1024 * 1024));
+    
+    return tempSize;
 }
 
 @end
