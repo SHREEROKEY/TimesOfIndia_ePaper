@@ -25,7 +25,8 @@
     // Get the file name of the jpeg file
     NSString* fileName = [self.imageUrl lastPathComponent];
     // Form the path to file
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, ((AppDelegate *)[UIApplication sharedApplication].delegate).editionString, fileName];
+    NSString* editionStr = [NSString stringWithFormat:@"%d", (int)((AppDelegate *)[UIApplication sharedApplication].delegate).editionString.editionId];
+    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
     // Does the file exist
     if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
@@ -44,6 +45,8 @@
         NSOperationQueue* queue = [[NSOperationQueue alloc] init];
         // queue the operation
         [queue addOperation:op];
+        // Show activity indicator
+        [self.activityIndicator startAnimating];
     }
 }
 
@@ -58,11 +61,16 @@
     // Get the file name of the jpeg file
     NSString* fileName = [self.imageUrl lastPathComponent];
     // Form the path to file
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, ((AppDelegate *)[UIApplication sharedApplication].delegate).editionString, fileName];
+    NSString* editionStr = [NSString stringWithFormat:@"%d", (int)((AppDelegate *)[UIApplication sharedApplication].delegate).editionString.editionId];
+    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
     // Do any additional setup after loading the view.
     NSURL* url = [NSURL URLWithString:filePath];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Hide activity indicato
+        [self.activityIndicator stopAnimating];
+    });
 }
 
 /**

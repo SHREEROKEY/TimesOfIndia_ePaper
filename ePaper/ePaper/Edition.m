@@ -16,4 +16,6 @@
 
 @synthesize color = _color;
 
+@synthesize editionPath = _editionPath;
+
 @end

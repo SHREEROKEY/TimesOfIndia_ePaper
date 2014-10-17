@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSString* imageUrl;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 - (void) imageDownloaded;
 
 @end

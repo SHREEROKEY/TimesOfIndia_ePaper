@@ -36,20 +36,40 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4G-kH-1YQ">
                                                     <rect key="frame" x="5" y="5" width="210" height="328"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="0tI-l6-Gf9"/>
                                                         <constraint firstAttribute="height" constant="328" id="q4I-gc-net"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-zI-rJs">
+                                                    <rect key="frame" x="8" y="305" width="204" height="25"/>
+                                                    <color key="backgroundColor" red="0.98039215690000003" green="0.76078431369999999" blue="0.3411764706" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="jCV-g4-KMG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Su2-PV-FWP">
+                                                    <rect key="frame" x="100" y="159" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="gUu-zI-rJs" secondAttribute="bottom" id="4gq-Td-aE8"/>
                                             <constraint firstAttribute="centerX" secondItem="I4G-kH-1YQ" secondAttribute="centerX" id="8BC-Ou-6mZ"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="gUu-zI-rJs" secondAttribute="trailing" id="QAD-y3-ash"/>
+                                            <constraint firstItem="gUu-zI-rJs" firstAttribute="leading" secondItem="r0s-gu-pX2" secondAttribute="leadingMargin" id="dh7-Os-5F1"/>
                                             <constraint firstAttribute="centerY" secondItem="I4G-kH-1YQ" secondAttribute="centerY" id="o5b-eU-B9o"/>
+                                            <constraint firstAttribute="centerX" secondItem="Su2-PV-FWP" secondAttribute="centerX" id="y0o-7I-4YS"/>
+                                            <constraint firstAttribute="centerY" secondItem="Su2-PV-FWP" secondAttribute="centerY" id="zgd-K1-3ys"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="Su2-PV-FWP" id="Wff-b8-Yy3"/>
+                                            <outlet property="pageName" destination="gUu-zI-rJs" id="rKt-3S-ZVD"/>
                                             <outlet property="thumbnail" destination="I4G-kH-1YQ" id="AE6-y8-GNp"/>
                                         </connections>
                                     </collectionViewCell>
@@ -289,10 +309,15 @@
                                 <rect key="frame" x="16" y="64" width="568" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QKV-XB-SCL">
+                                <rect key="frame" x="290" y="321" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9bF-8a-w8c" firstAttribute="leading" secondItem="Jsd-AE-39I" secondAttribute="leadingMargin" id="3Ye-vW-Wna"/>
+                            <constraint firstAttribute="centerY" secondItem="QKV-XB-SCL" secondAttribute="centerY" id="9Na-v0-8rs"/>
+                            <constraint firstAttribute="centerX" secondItem="QKV-XB-SCL" secondAttribute="centerX" id="G7O-yl-z4x"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9bF-8a-w8c" secondAttribute="trailing" id="GCq-Bs-BlB"/>
                             <constraint firstItem="IQd-Ak-GBp" firstAttribute="top" secondItem="9bF-8a-w8c" secondAttribute="bottom" id="edt-D9-UzT"/>
                             <constraint firstItem="9bF-8a-w8c" firstAttribute="top" secondItem="A2J-tG-xe6" secondAttribute="bottom" id="fG9-vl-VWx"/>
@@ -300,6 +325,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="QKV-XB-SCL" id="D0j-QF-s64"/>
                         <outlet property="webView" destination="9bF-8a-w8c" id="WOl-C5-tx6"/>
                     </connections>
                 </viewController>

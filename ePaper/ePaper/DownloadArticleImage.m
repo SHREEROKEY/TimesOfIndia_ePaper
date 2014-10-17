@@ -18,8 +18,9 @@
 {
     // Get the file name of the jpeg file
     NSString* fileName = [self.imageUrl lastPathComponent];
+    NSString* editionStr = [NSString stringWithFormat:@"%d", (int)((AppDelegate *)[UIApplication sharedApplication].delegate).editionString.editionId];
     // Form the path to file
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, ((AppDelegate *)[UIApplication sharedApplication].delegate).editionString, fileName];
+    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
     // Check if the file exists
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {

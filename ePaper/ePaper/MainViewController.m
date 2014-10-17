@@ -13,6 +13,7 @@
 #import "Article.h"
 #import "ArticleListController.h"
 #import "AppDelegate.h"
+#import "DownloadAllPageThumbnail.h"
 
 @interface MainViewController ()
 {
@@ -46,6 +47,12 @@
             [self.collectionView reloadData];
             [self.activityIndicator stopAnimating];
             self.blockingScreen.hidden = YES;
+            // Now create DownloadAllPageThumbnail and schedule it for execution
+            DownloadAllPageThumbnail* op = [[DownloadAllPageThumbnail alloc] init];
+            op.pages = self.pages;
+            op.ctrl = self;
+            // schedule iperation
+            [queue addOperation:op];
         }
         else
         {
@@ -55,6 +62,14 @@
             UIAlertView* av = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Unable to get ePaper. You can only access it in India." delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
             [av show];
         }
+    });
+}
+
+- (void) reloadCellAtIndex: (int) cellPosition
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSIndexPath* path = [NSIndexPath indexPathForItem:cellPosition inSection:0];
+        [self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObjects: path, nil]];
     });
 }
 
@@ -77,7 +92,7 @@
     baseUrlThumb = [NSString stringWithFormat:@"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/%@/%@/%@/%@/PageThumb/%@_%@_%@_", self.cityName, year, month, date, date, month, year];
     baseUrl = [NSString stringWithFormat:@"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/%@/%@/%@/%@/Page/%@_%@_%@_", self.cityName, year, month, date, date, month, year];
     //
-    self.title =  [NSString stringWithFormat:@"ToI %@ (%@-%@-%@)", self.cityName, date, monthName, year];
+    self.title =  [NSString stringWithFormat:@"%@ (%@-%@-%@)", self.edition.editionName, date, monthName, year];
     //
     FetchDayIndexData* op = [[FetchDayIndexData alloc] init];
     op.ctrl = self;
@@ -186,11 +201,16 @@
 {
     ThumbnailCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ThumbnailCell" forIndexPath:indexPath];
     Page* page = [self.pages objectAtIndex:indexPath.item];
-    if (page.thumbnailImage == nil)
+    if (page.thumbnailImage != nil)
     {
-        page.thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:page.thumbnailUrl]]];
+        cell.thumbnail.image = page.thumbnailImage;
+        [cell.activityIndicator stopAnimating];
     }
-    cell.thumbnail.image = page.thumbnailImage;
+    else
+    {
+        [cell.activityIndicator startAnimating];
+    }
+    cell.pageName.text = page.title;
     return cell;
 }
 

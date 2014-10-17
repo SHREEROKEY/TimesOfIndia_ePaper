@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Edition.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -14,7 +15,7 @@
 
 @property (nonatomic, copy) NSString* dateString;
 
-@property (nonatomic, copy) NSString* editionString;
+@property (nonatomic, strong) Edition* editionString;
 
 @end
 

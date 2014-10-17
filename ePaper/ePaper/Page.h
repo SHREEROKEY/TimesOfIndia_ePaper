@@ -16,5 +16,6 @@
 @property (copy, nonatomic) NSString* thumbnailUrl;
 @property (strong, nonatomic) NSArray* articles;
 @property (strong, nonatomic) UIImage* thumbnailImage;
+@property (strong, nonatomic) NSString* localPath;
 
 @end

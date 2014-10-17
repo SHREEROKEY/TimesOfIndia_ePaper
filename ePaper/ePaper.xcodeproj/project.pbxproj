@@ -33,6 +33,7 @@
 		06EC8C8A19CD50AF004DBD4E /* toiepaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8919CD50AF004DBD4E /* toiepaper.png */; };
 		06EC8C8D19CD6FCD004DBD4E /* WelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC8C8C19CD6FCD004DBD4E /* WelcomeController.m */; };
 		06F01D0419CC77E900B502B7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F01D0319CC77E900B502B7 /* libxml2.dylib */; };
+		06F2509419F0EE1700039FAC /* DownloadAllPageThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F2509319F0EE1700039FAC /* DownloadAllPageThumbnail.m */; };
 		06F5A0CC19DACAA000154E55 /* DownloadArticleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5A0CB19DACAA000154E55 /* DownloadArticleImage.m */; };
 		06FA307319DBB6B500407865 /* DayDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FA307219DBB6B500407865 /* DayDetailCell.m */; };
 		06FA307619DBB72500407865 /* DayDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FA307519DBB72500407865 /* DayDetail.m */; };
@@ -83,6 +84,8 @@
 		06EC8C8B19CD6FCD004DBD4E /* WelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeController.h; sourceTree = "<group>"; };
 		06EC8C8C19CD6FCD004DBD4E /* WelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeController.m; sourceTree = "<group>"; };
 		06F01D0319CC77E900B502B7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		06F2509219F0EE1700039FAC /* DownloadAllPageThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAllPageThumbnail.h; sourceTree = "<group>"; };
+		06F2509319F0EE1700039FAC /* DownloadAllPageThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAllPageThumbnail.m; sourceTree = "<group>"; };
 		06F5A0CA19DACAA000154E55 /* DownloadArticleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadArticleImage.h; sourceTree = "<group>"; };
 		06F5A0CB19DACAA000154E55 /* DownloadArticleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadArticleImage.m; sourceTree = "<group>"; };
 		06FA307119DBB6B500407865 /* DayDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayDetailCell.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				06FA307819DBB99500407865 /* GetDirectoryContents.m */,
 				06FA307A19DBED6100407865 /* DeleteFolder.h */,
 				06FA307B19DBED6100407865 /* DeleteFolder.m */,
+				06F2509219F0EE1700039FAC /* DownloadAllPageThumbnail.h */,
+				06F2509319F0EE1700039FAC /* DownloadAllPageThumbnail.m */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				06C84C5E19DC56C700A5F101 /* Edition.m in Sources */,
 				069F74A319CC27EA00BBF955 /* MainViewController.m in Sources */,
 				06F5A0CC19DACAA000154E55 /* DownloadArticleImage.m in Sources */,
+				06F2509419F0EE1700039FAC /* DownloadAllPageThumbnail.m in Sources */,
 				069F74A619CC28F300BBF955 /* ArticleListController.m in Sources */,
 				063EAA5C19DBAAFF00150BE8 /* StoredDataListController.m in Sources */,
 				06435CCF19CC27070031F5A1 /* main.m in Sources */,

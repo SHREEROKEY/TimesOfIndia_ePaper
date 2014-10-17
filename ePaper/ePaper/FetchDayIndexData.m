@@ -27,8 +27,8 @@
 #define ART_XPATH_1     @"/DayIndex/Page[%d]/Article[%d]"
 #define ART_XPATH_2     @"/DayIndex/Page[%d]/Article[%d]/ArticleTitle"
 #define ART_XPATH_3     @"/DayIndex/Page[%d]/Article[%d]/ArticleBody"
-#define IMAGE_URL       @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/%@/%@/%@/%@/Article/%@/%@_%@_%@_%@_%@.jpg"
-#define PAGE_THUMB_URL  @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/%@/%@/%@/%@/Page/%@.jpg"
+#define IMAGE_URL       @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/%@/%@/%@/%@/%@/Article/%@/%@_%@_%@_%@_%@.jpg"
+#define PAGE_THUMB_URL  @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/%@/%@/%@/%@/%@/Page/%@.jpg"
 
 #define DAYINDEX_FILE   @"/DayIndex.xml"
 
@@ -53,7 +53,7 @@
     // Set the controller data to nil
     self.ctrl.pages = nil;
     // Create the path to today's data in Documents folder
-    pathToDayData = [NSString stringWithFormat:@"%@/%@/%@", [self applicationDocumentsDirectory], self.date, self.edition];
+    pathToDayData = [NSString stringWithFormat:@"%@/%@/%@", [self applicationDocumentsDirectory], self.date, [NSString stringWithFormat:@"%d", (int)self.edition.editionId]];
     // The file that stored day index
     NSString *dayIndexFile = [NSString stringWithFormat:@"%@/%@", pathToDayData, DAYINDEX_FILE];
     // Check if the directory exists or not?
@@ -65,7 +65,7 @@
     else
     {
         // create the URL
-        NSString* strUrl = [NSString stringWithFormat:URL, self.edition, self.date];
+        NSString* strUrl = [NSString stringWithFormat:URL, [NSString stringWithFormat:@"%d", (int)self.edition.editionId], self.date];
         NSURL* url = [NSURL URLWithString:strUrl];
         // Now execute HTTP get command
         NSURLRequest* request = [NSURLRequest requestWithURL:url];
@@ -158,22 +158,23 @@
                                             if (page.thumbnailUrl == nil)
                                             {
                                                 // http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/BANGALORE/2014/09/19/PageThumb/19_09_2014_001.jpg
-                                                page.thumbnailUrl = [NSString stringWithFormat:PAGE_THUMB_URL, self.cityName, year, month, day, page.name];
+                                                page.thumbnailUrl = [NSString stringWithFormat:PAGE_THUMB_URL, self.edition.editionPath, self.cityName, year, month, day, page.name];
                                                 NSString* imageFilePath = [NSString stringWithFormat:@"%@/%@", pathToDayData, page.name];
                                                 NSData* imageData = nil;
                                                 if ([[NSFileManager defaultManager] fileExistsAtPath:imageFilePath])
                                                 {
                                                     imageData = [NSData dataWithContentsOfFile: imageFilePath];
+                                                    page.thumbnailImage = [UIImage imageWithData:imageData];
                                                 }
                                                 else
                                                 {
-                                                    imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:page.thumbnailUrl]];
-                                                    [self writeData: imageData toFile: imageFilePath];
+                                                    // Do not load the image now as it slows down the process of loading first page
+                                                    // Store the local path as we will need it later to persist the data
+                                                    page.localPath = imageFilePath;
                                                 }
-                                                page.thumbnailImage = [UIImage imageWithData:imageData];
                                             }
                                             // http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/BANGALORE/2014/09/19/Article/001/19_09_2014_001_016.jpg
-                                            art.imageUrl = [NSString stringWithFormat:IMAGE_URL, self.cityName, year, month, day, pageNumber, day, month, year, pageNumber, articleNumber];
+                                            art.imageUrl = [NSString stringWithFormat:IMAGE_URL, self.edition.editionPath, self.cityName, year, month, day, pageNumber, day, month, year, pageNumber, articleNumber];
                                             //
                                             [articles addObject:art];
                                         }

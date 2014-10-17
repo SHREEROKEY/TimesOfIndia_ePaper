@@ -15,5 +15,6 @@
 @synthesize thumbnailUrl = _thumbnailUrl;
 @synthesize articles = _articles;
 @synthesize thumbnailImage = _thumbnailImage;
+@synthesize localPath = _localPath;
 
 @end

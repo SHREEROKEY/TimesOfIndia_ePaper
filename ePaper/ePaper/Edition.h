@@ -17,4 +17,6 @@
 
 @property (nonatomic, strong) UIColor* color;
 
+@property (nonatomic, copy) NSString* editionPath;
+
 @end

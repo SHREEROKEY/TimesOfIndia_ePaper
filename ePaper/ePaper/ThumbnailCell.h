@@ -14,4 +14,8 @@
 
 - (void) loadThumbnail: (NSString *) url;
 
+@property (weak, nonatomic) IBOutlet UILabel *pageName;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end

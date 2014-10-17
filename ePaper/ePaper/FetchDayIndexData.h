@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "MainViewController.h"
-
+#import "Edition.h"
 
 @interface FetchDayIndexData : NSOperation
 
-@property (copy, nonatomic) NSString* edition;
+@property (strong, nonatomic) Edition* edition;
 @property (copy, nonatomic) NSString* cityName;
 @property (copy, nonatomic) NSString* date;
 @property (strong, nonatomic) MainViewController* ctrl;

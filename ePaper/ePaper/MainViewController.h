@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Edition.h"
 
 @interface MainViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -18,10 +19,12 @@
 
 @property (strong, nonatomic) NSArray* pages;
 
-@property (copy, nonatomic) NSString* edition;
+@property (strong, nonatomic) Edition* edition;
 
 @property (copy, nonatomic) NSString* cityName;
 
 - (void) dataUpdated;
+
+- (void) reloadCellAtIndex: (int) cellPosition;
 
 @end

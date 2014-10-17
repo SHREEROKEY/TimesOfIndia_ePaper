@@ -17,4 +17,11 @@
     self.thumbnail.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
 }
 
+- (void) prepareForReuse
+{
+    self.thumbnail.image = nil;
+    self.pageName.text = @"";
+    [self.activityIndicator stopAnimating];
+}
+
 @end
