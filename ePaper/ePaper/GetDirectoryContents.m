@@ -18,7 +18,7 @@
     //
     NSError* error = nil;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyymmdd"];
+    [dateFormat setDateFormat:@"yyyyMMdd"];
     NSDateFormatter *dateDisplayFormat = [[NSDateFormatter alloc] init];
     [dateDisplayFormat setDateFormat:@"dd MMM yyyy"];
     NSMutableArray* details = [[NSMutableArray alloc] init];
