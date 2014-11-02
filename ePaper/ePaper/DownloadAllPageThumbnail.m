@@ -8,6 +8,7 @@
 
 #import "DownloadAllPageThumbnail.h"
 #import "Page.h"
+#import "Utility.h"
 
 @implementation DownloadAllPageThumbnail
 
@@ -27,7 +28,7 @@
             // Get data of the thumbnail
             NSData* imageData = [NSData dataWithContentsOfURL:url];
             // Save this data on disk
-            [self writeData:imageData toFile:page.localPath];
+            [Utility writeData:imageData toFile:page.localPath];
             // Convert this to image
             UIImage* image = [UIImage imageWithData:imageData];
             // Assign this to the page thumbnail
@@ -38,13 +39,6 @@
         // Increment the counter
         counter++;
     }
-}
-
-- (BOOL) writeData: (NSData*) data toFile: (NSString*) filePath
-{
-    NSError* error;
-    BOOL retval = [data writeToFile:filePath options:0 error:&error];
-    return retval;
 }
 
 @end

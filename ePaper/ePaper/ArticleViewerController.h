@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
+#import "Edition.h"
 
 @interface ArticleViewerController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @property (strong, nonatomic) NSString* imageUrl;
+
+@property (strong, nonatomic) Article* article;
+
+@property (strong, nonatomic) Edition* edition;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 

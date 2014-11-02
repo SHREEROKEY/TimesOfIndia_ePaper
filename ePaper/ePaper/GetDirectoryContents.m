@@ -8,6 +8,7 @@
 
 #import "GetDirectoryContents.h"
 #import "DayDetail.h"
+#import "Utility.h"
 
 @implementation GetDirectoryContents
 
@@ -23,7 +24,7 @@
     [dateDisplayFormat setDateFormat:@"dd MMM yyyy"];
     NSMutableArray* details = [[NSMutableArray alloc] init];
     // Get the documents directory
-    NSString* documentsDir = [self applicationDocumentsDirectory];
+    NSString* documentsDir = [Utility applicationDocumentsDirectory];
     // Now get list of contents in the documents directory
     NSArray* contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDir error:&error];
     // do we have the contents
@@ -51,16 +52,6 @@
     [self.ctrl dataAvailable];
 }
 
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSString *)applicationDocumentsDirectory
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return documentsDirectory;
-}
 
 - (NSInteger) folderSize:(NSString *)folderPath
 {

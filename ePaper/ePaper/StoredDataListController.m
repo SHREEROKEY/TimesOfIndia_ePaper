@@ -26,6 +26,8 @@
 {
     [super viewDidLoad];
     //
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    //
     [self.navigationController setToolbarHidden:NO animated:YES];
     //
     GetDirectoryContents* op = [[GetDirectoryContents alloc] init];

@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ArticleViewerController.h"
+#import "ArticleImageViewerController.h"
 
 @interface DownloadArticleImage : NSOperation
 
 @property (nonatomic, copy) NSString* imageUrl;
-@property (nonatomic, strong) ArticleViewerController* ctrl;
+@property (nonatomic, strong) ArticleImageViewerController* ctrl;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "DownloadArticleImage.h"
 #import "AppDelegate.h"
+#import "Utility.h"
 
 @implementation DownloadArticleImage
 
@@ -20,32 +21,15 @@
     NSString* fileName = [self.imageUrl lastPathComponent];
     NSString* editionStr = [NSString stringWithFormat:@"%d", (int)((AppDelegate *)[UIApplication sharedApplication].delegate).editionString.editionId];
     // Form the path to file
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
+    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [Utility applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
     // Check if the file exists
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
     {
         // Download the file
         NSData* imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrl]];
-        [self writeData:imageData toFile:filePath];
+        [Utility writeData:imageData toFile:filePath];
     }
     [self.ctrl imageDownloaded];
-}
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSString *)applicationDocumentsDirectory
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return documentsDirectory;
-}
-
-- (BOOL) writeData: (NSData*) data toFile: (NSString*) filePath
-{
-    NSError* error;
-    BOOL retval = [data writeToFile:filePath options:0 error:&error];
-    return retval;
 }
 
 @end

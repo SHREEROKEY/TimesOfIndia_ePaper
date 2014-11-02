@@ -17,5 +17,6 @@
 @property (copy, nonatomic) NSString* imageUrl;
 @property (copy, nonatomic) NSString* articleImageUrl;
 @property (strong, nonatomic) UIImage* articleImage;
+@property (copy, nonatomic) NSString* mp3Url;
 
 @end

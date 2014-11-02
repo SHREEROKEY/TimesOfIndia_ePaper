@@ -13,13 +13,15 @@
 		0600C20519CC472800756DB8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0600C20419CC472800756DB8 /* CoreFoundation.framework */; };
 		0600C20719CC473000756DB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0600C20619CC473000756DB8 /* UIKit.framework */; };
 		0621725919CC96520053D5AB /* ArticleViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0621725819CC96520053D5AB /* ArticleViewerController.m */; };
-		062531A119DC26E70048DAFF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 062531A019DC26E70048DAFF /* MyButton.m */; };
+		062F47F019F8FF68006B950F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062F47EF19F8FF68006B950F /* AVFoundation.framework */; };
 		063EAA5C19DBAAFF00150BE8 /* StoredDataListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EAA5B19DBAAFF00150BE8 /* StoredDataListController.m */; };
 		06435CCF19CC27070031F5A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06435CCE19CC27070031F5A1 /* main.m */; };
 		06435CD219CC27070031F5A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06435CD119CC27070031F5A1 /* AppDelegate.m */; };
 		06435CD819CC27070031F5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06435CD619CC27070031F5A1 /* Main.storyboard */; };
 		06435CDA19CC27070031F5A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06435CD919CC27070031F5A1 /* Images.xcassets */; };
 		06435CDD19CC27070031F5A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06435CDB19CC27070031F5A1 /* LaunchScreen.xib */; };
+		066EAFAB19F8DE3C0062B90E /* epaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 066EAFAA19F8DE3C0062B90E /* epaper.png */; };
+		067BF64719F8F59200BA4F1A /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 067BF64619F8F59200BA4F1A /* Utility.m */; };
 		069F74A319CC27EA00BBF955 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F74A219CC27EA00BBF955 /* MainViewController.m */; };
 		069F74A619CC28F300BBF955 /* ArticleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F74A519CC28F300BBF955 /* ArticleListController.m */; };
 		069F74A919CC29E700BBF955 /* ThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F74A819CC29E700BBF955 /* ThumbnailCell.m */; };
@@ -28,9 +30,10 @@
 		06C84C5E19DC56C700A5F101 /* Edition.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C84C5D19DC56C700A5F101 /* Edition.m */; };
 		06C84C6019DC5AD000A5F101 /* EditionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C84C5F19DC5AD000A5F101 /* EditionCell.xib */; };
 		06C84C6319DC5BC800A5F101 /* EditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C84C6219DC5BC800A5F101 /* EditionCell.m */; };
+		06EAC3E919F7B631002DFAAE /* DownloadArticleHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EAC3E819F7B631002DFAAE /* DownloadArticleHTML.m */; };
+		06EAC3EC19F7C26B002DFAAE /* ArticleImageViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EAC3EB19F7C26B002DFAAE /* ArticleImageViewerController.m */; };
 		06EC8C8719CD4EFD004DBD4E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8519CD4EFD004DBD4E /* iTunesArtwork.png */; };
 		06EC8C8819CD4EFD004DBD4E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8619CD4EFD004DBD4E /* iTunesArtwork@2x.png */; };
-		06EC8C8A19CD50AF004DBD4E /* toiepaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 06EC8C8919CD50AF004DBD4E /* toiepaper.png */; };
 		06EC8C8D19CD6FCD004DBD4E /* WelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06EC8C8C19CD6FCD004DBD4E /* WelcomeController.m */; };
 		06F01D0419CC77E900B502B7 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F01D0319CC77E900B502B7 /* libxml2.dylib */; };
 		06F2509419F0EE1700039FAC /* DownloadAllPageThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F2509319F0EE1700039FAC /* DownloadAllPageThumbnail.m */; };
@@ -51,8 +54,7 @@
 		0600C20619CC473000756DB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0621725719CC96520053D5AB /* ArticleViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewerController.h; sourceTree = "<group>"; };
 		0621725819CC96520053D5AB /* ArticleViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewerController.m; sourceTree = "<group>"; };
-		0625319F19DC26E70048DAFF /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
-		062531A019DC26E70048DAFF /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		062F47EF19F8FF68006B950F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		063EAA5A19DBAAFF00150BE8 /* StoredDataListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoredDataListController.h; sourceTree = "<group>"; };
 		063EAA5B19DBAAFF00150BE8 /* StoredDataListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoredDataListController.m; sourceTree = "<group>"; };
 		06435CC919CC27070031F5A1 /* ePaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ePaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,9 @@
 		06435CD719CC27070031F5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06435CD919CC27070031F5A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06435CDC19CC27070031F5A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		066EAFAA19F8DE3C0062B90E /* epaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = epaper.png; sourceTree = "<group>"; };
+		067BF64519F8F59200BA4F1A /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		067BF64619F8F59200BA4F1A /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		069F74A119CC27EA00BBF955 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		069F74A219CC27EA00BBF955 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		069F74A419CC28F300BBF955 /* ArticleListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListController.h; sourceTree = "<group>"; };
@@ -78,9 +83,12 @@
 		06C84C5F19DC5AD000A5F101 /* EditionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditionCell.xib; sourceTree = "<group>"; };
 		06C84C6119DC5BC800A5F101 /* EditionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditionCell.h; sourceTree = "<group>"; };
 		06C84C6219DC5BC800A5F101 /* EditionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditionCell.m; sourceTree = "<group>"; };
+		06EAC3E719F7B631002DFAAE /* DownloadArticleHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadArticleHTML.h; sourceTree = "<group>"; };
+		06EAC3E819F7B631002DFAAE /* DownloadArticleHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadArticleHTML.m; sourceTree = "<group>"; };
+		06EAC3EA19F7C26B002DFAAE /* ArticleImageViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleImageViewerController.h; sourceTree = "<group>"; };
+		06EAC3EB19F7C26B002DFAAE /* ArticleImageViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleImageViewerController.m; sourceTree = "<group>"; };
 		06EC8C8519CD4EFD004DBD4E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		06EC8C8619CD4EFD004DBD4E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		06EC8C8919CD50AF004DBD4E /* toiepaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toiepaper.png; path = ../toiepaper.png; sourceTree = "<group>"; };
 		06EC8C8B19CD6FCD004DBD4E /* WelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeController.h; sourceTree = "<group>"; };
 		06EC8C8C19CD6FCD004DBD4E /* WelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeController.m; sourceTree = "<group>"; };
 		06F01D0319CC77E900B502B7 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -103,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062F47F019F8FF68006B950F /* AVFoundation.framework in Frameworks */,
 				06F01D0419CC77E900B502B7 /* libxml2.dylib in Frameworks */,
 				0600C20719CC473000756DB8 /* UIKit.framework in Frameworks */,
 				0600C20519CC472800756DB8 /* CoreFoundation.framework in Frameworks */,
@@ -113,15 +122,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		062531A219DC26F40048DAFF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0625319F19DC26E70048DAFF /* MyButton.h */,
-				062531A019DC26E70048DAFF /* MyButton.m */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		06435CC019CC27070031F5A1 = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +143,6 @@
 			children = (
 				06435CD019CC27070031F5A1 /* AppDelegate.h */,
 				06435CD119CC27070031F5A1 /* AppDelegate.m */,
-				062531A219DC26F40048DAFF /* Views */,
 				06FA308219DC00E800407865 /* Resources */,
 				06FA308019DBF85A00407865 /* Model */,
 				06FA307F19DBF83900407865 /* Operations */,
@@ -151,6 +150,7 @@
 				06FA307D19DBF7FD00407865 /* Controlers */,
 				06FA308119DC00C600407865 /* Framework & Library */,
 				06435CCC19CC27070031F5A1 /* Supporting Files */,
+				067BF64819F8F5A500BA4F1A /* Utility */,
 			);
 			path = ePaper;
 			sourceTree = "<group>";
@@ -164,19 +164,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		067BF64819F8F5A500BA4F1A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				067BF64519F8F59200BA4F1A /* Utility.h */,
+				067BF64619F8F59200BA4F1A /* Utility.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		06FA307D19DBF7FD00407865 /* Controlers */ = {
 			isa = PBXGroup;
 			children = (
-				06EC8C8B19CD6FCD004DBD4E /* WelcomeController.h */,
-				06EC8C8C19CD6FCD004DBD4E /* WelcomeController.m */,
-				063EAA5A19DBAAFF00150BE8 /* StoredDataListController.h */,
-				063EAA5B19DBAAFF00150BE8 /* StoredDataListController.m */,
-				069F74A119CC27EA00BBF955 /* MainViewController.h */,
-				069F74A219CC27EA00BBF955 /* MainViewController.m */,
+				06EAC3EA19F7C26B002DFAAE /* ArticleImageViewerController.h */,
+				06EAC3EB19F7C26B002DFAAE /* ArticleImageViewerController.m */,
 				069F74A419CC28F300BBF955 /* ArticleListController.h */,
 				069F74A519CC28F300BBF955 /* ArticleListController.m */,
 				0621725719CC96520053D5AB /* ArticleViewerController.h */,
 				0621725819CC96520053D5AB /* ArticleViewerController.m */,
+				069F74A119CC27EA00BBF955 /* MainViewController.h */,
+				069F74A219CC27EA00BBF955 /* MainViewController.m */,
+				063EAA5A19DBAAFF00150BE8 /* StoredDataListController.h */,
+				063EAA5B19DBAAFF00150BE8 /* StoredDataListController.m */,
+				06EC8C8B19CD6FCD004DBD4E /* WelcomeController.h */,
+				06EC8C8C19CD6FCD004DBD4E /* WelcomeController.m */,
 			);
 			name = Controlers;
 			sourceTree = "<group>";
@@ -184,14 +195,14 @@
 		06FA307E19DBF81D00407865 /* Table Cell Views */ = {
 			isa = PBXGroup;
 			children = (
-				069F74A719CC29E700BBF955 /* ThumbnailCell.h */,
-				069F74A819CC29E700BBF955 /* ThumbnailCell.m */,
 				069F74AA19CC2A0400BBF955 /* ArticleCell.h */,
 				069F74AB19CC2A0400BBF955 /* ArticleCell.m */,
 				06FA307119DBB6B500407865 /* DayDetailCell.h */,
 				06FA307219DBB6B500407865 /* DayDetailCell.m */,
 				06C84C6119DC5BC800A5F101 /* EditionCell.h */,
 				06C84C6219DC5BC800A5F101 /* EditionCell.m */,
+				069F74A719CC29E700BBF955 /* ThumbnailCell.h */,
+				069F74A819CC29E700BBF955 /* ThumbnailCell.m */,
 			);
 			name = "Table Cell Views";
 			sourceTree = "<group>";
@@ -199,16 +210,18 @@
 		06FA307F19DBF83900407865 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				069F74AF19CC2A3400BBF955 /* FetchDayIndexData.h */,
-				069F74B019CC2A3400BBF955 /* FetchDayIndexData.m */,
-				06F5A0CA19DACAA000154E55 /* DownloadArticleImage.h */,
-				06F5A0CB19DACAA000154E55 /* DownloadArticleImage.m */,
-				06FA307719DBB99500407865 /* GetDirectoryContents.h */,
-				06FA307819DBB99500407865 /* GetDirectoryContents.m */,
 				06FA307A19DBED6100407865 /* DeleteFolder.h */,
 				06FA307B19DBED6100407865 /* DeleteFolder.m */,
 				06F2509219F0EE1700039FAC /* DownloadAllPageThumbnail.h */,
 				06F2509319F0EE1700039FAC /* DownloadAllPageThumbnail.m */,
+				06EAC3E719F7B631002DFAAE /* DownloadArticleHTML.h */,
+				06EAC3E819F7B631002DFAAE /* DownloadArticleHTML.m */,
+				06F5A0CA19DACAA000154E55 /* DownloadArticleImage.h */,
+				06F5A0CB19DACAA000154E55 /* DownloadArticleImage.m */,
+				069F74AF19CC2A3400BBF955 /* FetchDayIndexData.h */,
+				069F74B019CC2A3400BBF955 /* FetchDayIndexData.m */,
+				06FA307719DBB99500407865 /* GetDirectoryContents.h */,
+				06FA307819DBB99500407865 /* GetDirectoryContents.m */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -216,14 +229,14 @@
 		06FA308019DBF85A00407865 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0600C1FA19CC449D00756DB8 /* Page.h */,
-				0600C1FB19CC449D00756DB8 /* Page.m */,
 				0600C1FD19CC44E200756DB8 /* Article.h */,
 				0600C1FE19CC44E200756DB8 /* Article.m */,
 				06FA307419DBB72500407865 /* DayDetail.h */,
 				06FA307519DBB72500407865 /* DayDetail.m */,
 				06C84C5C19DC56C700A5F101 /* Edition.h */,
 				06C84C5D19DC56C700A5F101 /* Edition.m */,
+				0600C1FA19CC449D00756DB8 /* Page.h */,
+				0600C1FB19CC449D00756DB8 /* Page.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				06F01D0319CC77E900B502B7 /* libxml2.dylib */,
+				062F47EF19F8FF68006B950F /* AVFoundation.framework */,
 				0600C20619CC473000756DB8 /* UIKit.framework */,
 				0600C20419CC472800756DB8 /* CoreFoundation.framework */,
 				0600C20219CC471E00756DB8 /* Foundation.framework */,
@@ -243,13 +257,13 @@
 		06FA308219DC00E800407865 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				06EC8C8919CD50AF004DBD4E /* toiepaper.png */,
+				06C84C5F19DC5AD000A5F101 /* EditionCell.xib */,
+				066EAFAA19F8DE3C0062B90E /* epaper.png */,
+				06435CD919CC27070031F5A1 /* Images.xcassets */,
 				06EC8C8519CD4EFD004DBD4E /* iTunesArtwork.png */,
 				06EC8C8619CD4EFD004DBD4E /* iTunesArtwork@2x.png */,
-				06435CD619CC27070031F5A1 /* Main.storyboard */,
-				06435CD919CC27070031F5A1 /* Images.xcassets */,
 				06435CDB19CC27070031F5A1 /* LaunchScreen.xib */,
-				06C84C5F19DC5AD000A5F101 /* EditionCell.xib */,
+				06435CD619CC27070031F5A1 /* Main.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -312,8 +326,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066EAFAB19F8DE3C0062B90E /* epaper.png in Resources */,
 				06435CD819CC27070031F5A1 /* Main.storyboard in Resources */,
-				06EC8C8A19CD50AF004DBD4E /* toiepaper.png in Resources */,
 				06EC8C8819CD4EFD004DBD4E /* iTunesArtwork@2x.png in Resources */,
 				06435CDD19CC27070031F5A1 /* LaunchScreen.xib in Resources */,
 				06EC8C8719CD4EFD004DBD4E /* iTunesArtwork.png in Resources */,
@@ -338,12 +352,14 @@
 				069F74A919CC29E700BBF955 /* ThumbnailCell.m in Sources */,
 				06435CD219CC27070031F5A1 /* AppDelegate.m in Sources */,
 				0621725919CC96520053D5AB /* ArticleViewerController.m in Sources */,
-				062531A119DC26E70048DAFF /* MyButton.m in Sources */,
 				0600C1FC19CC449D00756DB8 /* Page.m in Sources */,
 				069F74AC19CC2A0400BBF955 /* ArticleCell.m in Sources */,
 				06C84C6319DC5BC800A5F101 /* EditionCell.m in Sources */,
 				06C84C5E19DC56C700A5F101 /* Edition.m in Sources */,
 				069F74A319CC27EA00BBF955 /* MainViewController.m in Sources */,
+				06EAC3EC19F7C26B002DFAAE /* ArticleImageViewerController.m in Sources */,
+				067BF64719F8F59200BA4F1A /* Utility.m in Sources */,
+				06EAC3E919F7B631002DFAAE /* DownloadArticleHTML.m in Sources */,
 				06F5A0CC19DACAA000154E55 /* DownloadArticleImage.m in Sources */,
 				06F2509419F0EE1700039FAC /* DownloadAllPageThumbnail.m in Sources */,
 				069F74A619CC28F300BBF955 /* ArticleListController.m in Sources */,
@@ -460,7 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Philips Electronics North America Corporation";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;",
@@ -469,6 +485,7 @@
 				INFOPLIST_FILE = ePaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c6955bec-742f-4145-ab20-ca22fe37675b";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -478,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Philips Electronics North America Corporation";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include;",
@@ -487,6 +504,7 @@
 				INFOPLIST_FILE = ePaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c6955bec-742f-4145-ab20-ca22fe37675b";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

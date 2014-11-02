@@ -16,5 +16,6 @@
 @synthesize imageUrl = _imageUrl;
 @synthesize articleImageUrl = _articleImageUrl;
 @synthesize articleImage = _articleImage;
+@synthesize mp3Url = _mp3Url;
 
 @end

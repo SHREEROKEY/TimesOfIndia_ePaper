@@ -13,8 +13,14 @@
 @synthesize articleTitle = _articleTitle;
 @synthesize articleDetail = _articleDetail;
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        CGFloat fontSize = self.articleDetail.font.pointSize * 1.4;
+        self.articleDetail.font = [UIFont fontWithName:self.articleDetail.font.fontName size:fontSize];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

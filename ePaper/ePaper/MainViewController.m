@@ -92,7 +92,15 @@
     baseUrlThumb = [NSString stringWithFormat:@"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/%@/%@/%@/%@/PageThumb/%@_%@_%@_", self.cityName, year, month, date, date, month, year];
     baseUrl = [NSString stringWithFormat:@"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/%@/%@/%@/%@/Page/%@_%@_%@_", self.cityName, year, month, date, date, month, year];
     //
-    self.title =  [NSString stringWithFormat:@"%@ (%@-%@-%@)", self.edition.editionName, date, monthName, year];
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        self.title =  [NSString stringWithFormat:@"%@ (%@-%@-%@)", self.edition.editionName, date, monthName, year];
+    }
+    else
+    {
+        self.title =  [NSString stringWithFormat:@"%@-%@-%@", date, monthName, year];
+        self.navigationItem.prompt =  [NSString stringWithFormat:@"%@", self.edition.editionName];
+    }
     //
     FetchDayIndexData* op = [[FetchDayIndexData alloc] init];
     op.ctrl = self;
@@ -107,7 +115,8 @@
     [queue addOperation:op];
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //
@@ -182,6 +191,7 @@
         ArticleListController* ctrl = segue.destinationViewController;
         Page* page = [self.pages objectAtIndex:pageNumber];
         ctrl.articles = page.articles;
+        ctrl.edition = self.edition;
     }
 }
 

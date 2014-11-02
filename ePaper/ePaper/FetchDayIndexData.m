@@ -14,6 +14,7 @@
 #import <libxml/xmlschemas.h>
 #import "Page.h"
 #import "Article.h"
+#import "Utility.h"
 
 #define URL         @"http://epaperbeta.timesofindia.com/index.aspx?eid=%@&dt=%@"
 #define NEEDLE      @"var strDayIndex = '"
@@ -29,6 +30,7 @@
 #define ART_XPATH_3     @"/DayIndex/Page[%d]/Article[%d]/ArticleBody"
 #define IMAGE_URL       @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/%@/%@/%@/%@/%@/Article/%@/%@_%@_%@_%@_%@.jpg"
 #define PAGE_THUMB_URL  @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/%@/%@/%@/%@/%@/Page/%@.jpg"
+#define MP3_URL         @"http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/%@/%@/%@/%@/%@/podcast/%@.mp3"
 
 #define DAYINDEX_FILE   @"/DayIndex.xml"
 
@@ -53,7 +55,7 @@
     // Set the controller data to nil
     self.ctrl.pages = nil;
     // Create the path to today's data in Documents folder
-    pathToDayData = [NSString stringWithFormat:@"%@/%@/%@", [self applicationDocumentsDirectory], self.date, [NSString stringWithFormat:@"%d", (int)self.edition.editionId]];
+    pathToDayData = [NSString stringWithFormat:@"%@/%@/%@", [Utility applicationDocumentsDirectory], self.date, [NSString stringWithFormat:@"%d", (int)self.edition.editionId]];
     // The file that stored day index
     NSString *dayIndexFile = [NSString stringWithFormat:@"%@/%@", pathToDayData, DAYINDEX_FILE];
     // Check if the directory exists or not?
@@ -77,7 +79,7 @@
         // Create the directory first
         [[NSFileManager defaultManager] createDirectoryAtPath:pathToDayData withIntermediateDirectories:YES attributes:nil error:&error];
         // Save this data to the disk so next time we do not have to download it
-        [self writeData:data toFile:dayIndexFile];
+        [Utility writeData:data toFile:dayIndexFile];
     }
     // do we have data?
     if (data != nil && data.length > 0)
@@ -138,6 +140,9 @@
                                         // create the xpath
                                         NSString* artBodyXPath = [NSString stringWithFormat:ART_XPATH_3, index + 1, aidx + 1];
                                         art.body = [self getNodeContentFromContext:context withXPath:artBodyXPath];
+                                        art.body = [art.body stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+                                        art.body = [art.body stringByReplacingOccurrencesOfString:@"[ ]+" withString:@" " options:NSRegularExpressionSearch range:NSMakeRange(0, art.body.length)];
+                                        art.body = [art.body stringByReplacingOccurrencesOfString:@"<p>" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, art.body.length)];
                                         //
                                         NSString* artTitleXPath = [NSString stringWithFormat:ART_XPATH_2, index + 1, aidx + 1];
                                         art.title = [self getNodeContentFromContext:context withXPath:artTitleXPath];
@@ -155,6 +160,10 @@
                                             NSString* year = [imageParts substringWithRange: NSMakeRange(4, 4)];
                                             NSString* pageNumber = [imageParts substringWithRange: NSMakeRange(8, 3)];
                                             NSString* articleNumber = [imageParts substringWithRange: NSMakeRange(11, 3)];
+                                            //
+                                            art.mp3Url = [NSString stringWithFormat:MP3_URL, self.edition.editionPath, self.cityName, year, month, day, art.name];
+                                            // // http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/BANGALORE/2014/10/22/podcast/Doing-business-to-get-easy-registration-in-just-22102014001038.mp3
+                                            //
                                             if (page.thumbnailUrl == nil)
                                             {
                                                 // http://epaperbeta.timesofindia.com/NasData//PUBLICATIONS/THETIMESOFINDIA/BANGALORE/2014/09/19/PageThumb/19_09_2014_001.jpg
@@ -377,23 +386,6 @@
     xmlFree(content);
     
     return value;
-}
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSString *)applicationDocumentsDirectory
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return documentsDirectory;
-}
-
-- (BOOL) writeData: (NSData*) data toFile: (NSString*) filePath
-{
-    NSError* error;
-    BOOL retval = [data writeToFile:filePath options:0 error:&error];
-    return retval;
 }
 
 @end

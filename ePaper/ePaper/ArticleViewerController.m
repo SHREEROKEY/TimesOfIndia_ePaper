@@ -7,44 +7,49 @@
 //
 
 #import "ArticleViewerController.h"
-#import "DownloadArticleImage.h"
 #import "AppDelegate.h"
+#import "DownloadArticleHTML.h"
+#import "Utility.h"
 
 @interface ArticleViewerController ()
-
+{
+    NSString* htmlPath;
+}
 @end
 
 @implementation ArticleViewerController
 
 @synthesize webView = _webView;
 @synthesize imageUrl = _imageUrl;
+@synthesize article = _article;
+@synthesize edition = _edition;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Get the file name of the jpeg file
-    NSString* fileName = [self.imageUrl lastPathComponent];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     // Form the path to file
     NSString* editionStr = [NSString stringWithFormat:@"%d", (int)((AppDelegate *)[UIApplication sharedApplication].delegate).editionString.editionId];
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
+    htmlPath = [NSString stringWithFormat:@"%@/%@/%@/%@.html", [Utility applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, self.article.name];
     // Does the file exist
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
+    if ([[NSFileManager defaultManager] fileExistsAtPath:htmlPath])
     {
         // Do any additional setup after loading the view.
-        NSURL* url = [NSURL URLWithString:filePath];
+        NSURL* url = [NSURL URLWithString:htmlPath];
         NSURLRequest* request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
     }
     else
     {
-        // Download the file
-        DownloadArticleImage* op = [[DownloadArticleImage alloc] init];
-        op.ctrl = self;
-        op.imageUrl = self.imageUrl;
         // Create operation queue
         NSOperationQueue* queue = [[NSOperationQueue alloc] init];
-        // queue the operation
-        [queue addOperation:op];
+        //
+        DownloadArticleHTML* op2 = [[DownloadArticleHTML alloc] init];
+        op2.article = self.article;
+        op2.edition = [NSString stringWithFormat:@"%d", (int)self.edition.editionId];
+        op2.ctrl = self;
+        [queue addOperation:op2];
+        //
         // Show activity indicator
         [self.activityIndicator startAnimating];
     }
@@ -58,29 +63,17 @@
 
 - (void) imageDownloaded
 {
-    // Get the file name of the jpeg file
-    NSString* fileName = [self.imageUrl lastPathComponent];
     // Form the path to file
     NSString* editionStr = [NSString stringWithFormat:@"%d", (int)((AppDelegate *)[UIApplication sharedApplication].delegate).editionString.editionId];
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@/%@/%@", [self applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, fileName];
+    htmlPath = [NSString stringWithFormat:@"%@/%@/%@/%@.html", [Utility applicationDocumentsDirectory], ((AppDelegate *)[UIApplication sharedApplication].delegate).dateString, editionStr, self.article.name];
     // Do any additional setup after loading the view.
-    NSURL* url = [NSURL URLWithString:filePath];
+    NSURL* url = [NSURL URLWithString:htmlPath];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     dispatch_async(dispatch_get_main_queue(), ^{
         // Hide activity indicato
         [self.activityIndicator stopAnimating];
     });
-}
-
-/**
- Returns the URL to the application's Documents directory.
- */
-- (NSString *)applicationDocumentsDirectory
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return documentsDirectory;
 }
 
 @end
