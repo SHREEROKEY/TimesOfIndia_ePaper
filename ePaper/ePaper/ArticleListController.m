@@ -10,13 +10,11 @@
 #import "ArticleCell.h"
 #import "Article.h"
 #import "ArticleViewerController.h"
-#import <AVFoundation/AVFoundation.h>
 
 @interface ArticleListController ()
 {
     ArticleViewerController* ctrl;
     Article* article;
-    AVPlayer *anAudioStreamer;
 }
 @end
 
@@ -28,6 +26,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.estimatedRowHeight = 145.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    dispatch_after(100, dispatch_get_main_queue(), ^{[self.tableView reloadData];});
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,19 +67,16 @@
     if ([cell.articleDetail.text isEqualToString:@"..."])
     {
         cell.articleImgButton.hidden = YES;
-        cell.podcastButton.hidden = YES;
         cell.articleDetail.hidden = YES;
         cell.articleDetail.text = @"";
     }
     else
     {
         cell.articleImgButton.hidden = NO;
-        cell.podcastButton.hidden = NO;
         cell.articleDetail.hidden = NO;
     }
     cell.articleImgButton.tag = indexPath.item;
-    cell.podcastButton.tag = indexPath.item;
-    
+
     return cell;
 }
 
@@ -91,22 +94,6 @@
     {
         // Now invoke the segue to show image
         [self performSegueWithIdentifier:@"ShowSingleArticle" sender:self];
-    }
-}
-
-#pragma mark - Table view delegate
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Article* art = [self.articles objectAtIndex:indexPath.item];
-    NSString* artbody = art.body;
-    if ([artbody isEqualToString:@"..."])
-    {
-        return 75;
-    }
-    else
-    {
-        return 145;
     }
 }
 
@@ -143,17 +130,6 @@
     article = [self.articles objectAtIndex:tag];
     // Now invoke the segue to show image
     [self performSegueWithIdentifier:@"ShowSingleArticleImage" sender:self];
-}
-
-- (IBAction)playArticlePodcast:(id)sender
-{
-    // Get the tag of the button
-    NSInteger tag = ((UIButton *)sender).tag;
-    // Get the item
-    article = [self.articles objectAtIndex:tag];
-    AVPlayerItem *aPlayerItem = [[AVPlayerItem alloc] initWithURL:[NSURL URLWithString:article.mp3Url]];
-    anAudioStreamer = [[AVPlayer alloc] initWithPlayerItem:aPlayerItem];
-    [anAudioStreamer play];
 }
 
 @end

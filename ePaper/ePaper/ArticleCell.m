@@ -20,10 +20,13 @@
     {
         CGFloat fontSize = self.articleDetail.font.pointSize * 1.4;
         self.articleDetail.font = [UIFont fontWithName:self.articleDetail.font.fontName size:fontSize];
+        fontSize = self.articleTitle.font.pointSize * 1.4;
+        self.articleTitle.font = [UIFont fontWithName:self.articleTitle.font.fontName size:fontSize];
     }
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

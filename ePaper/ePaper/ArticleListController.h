@@ -17,6 +17,4 @@
 
 - (IBAction)showArticleImage:(id)sender;
 
-- (IBAction)playArticlePodcast:(id)sender;
-
 @end

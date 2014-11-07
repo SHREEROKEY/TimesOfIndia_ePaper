@@ -143,6 +143,7 @@
                                         art.body = [art.body stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
                                         art.body = [art.body stringByReplacingOccurrencesOfString:@"[ ]+" withString:@" " options:NSRegularExpressionSearch range:NSMakeRange(0, art.body.length)];
                                         art.body = [art.body stringByReplacingOccurrencesOfString:@"<p>" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, art.body.length)];
+                                        art.body = [art.body stringByReplacingOccurrencesOfString:@"<br>" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, art.body.length)];
                                         //
                                         NSString* artTitleXPath = [NSString stringWithFormat:ART_XPATH_2, index + 1, aidx + 1];
                                         art.title = [self getNodeContentFromContext:context withXPath:artTitleXPath];

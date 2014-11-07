@@ -11,8 +11,7 @@
 @interface ArticleCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *articleTitle;
-@property (weak, nonatomic) IBOutlet UITextView *articleDetail;
+@property (weak, nonatomic) IBOutlet UILabel *articleDetail;
 @property (weak, nonatomic) IBOutlet UIButton *articleImgButton;
-@property (weak, nonatomic) IBOutlet UIButton *podcastButton;
 
 @end

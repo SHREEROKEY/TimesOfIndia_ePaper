@@ -10,10 +10,12 @@
 #import "AppDelegate.h"
 #import "DownloadArticleHTML.h"
 #import "Utility.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface ArticleViewerController ()
 {
     NSString* htmlPath;
+    AVPlayer *anAudioStreamer;
 }
 @end
 
@@ -55,6 +57,16 @@
     }
 }
 
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if (anAudioStreamer && anAudioStreamer )
+    {
+        [anAudioStreamer pause];
+        anAudioStreamer = nil;
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -74,6 +86,14 @@
         // Hide activity indicato
         [self.activityIndicator stopAnimating];
     });
+}
+
+- (IBAction)playArticlePodcast:(id)sender
+{
+    // Get the item
+    AVPlayerItem *aPlayerItem = [[AVPlayerItem alloc] initWithURL:[NSURL URLWithString:self.article.mp3Url]];
+    anAudioStreamer = [[AVPlayer alloc] initWithPlayerItem:aPlayerItem];
+    [anAudioStreamer play];
 }
 
 @end
