@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LWh-Eh-39L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LWh-Eh-39L">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AWX-I5-1cm">
                                 <rect key="frame" x="16" y="64" width="568" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="bXS-HY-n44">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bXS-HY-n44">
                                     <size key="itemSize" width="220" height="338"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -37,10 +37,6 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I4G-kH-1YQ">
                                                     <rect key="frame" x="5" y="5" width="210" height="328"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="210" id="0tI-l6-Gf9"/>
-                                                        <constraint firstAttribute="height" constant="328" id="q4I-gc-net"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-zI-rJs">
                                                     <rect key="frame" x="8" y="305" width="204" height="25"/>
@@ -62,7 +58,11 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="gUu-zI-rJs" secondAttribute="bottom" id="4gq-Td-aE8"/>
                                             <constraint firstAttribute="centerX" secondItem="I4G-kH-1YQ" secondAttribute="centerX" id="8BC-Ou-6mZ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="gUu-zI-rJs" secondAttribute="trailing" id="QAD-y3-ash"/>
+                                            <constraint firstItem="I4G-kH-1YQ" firstAttribute="top" secondItem="r0s-gu-pX2" secondAttribute="top" constant="5" id="SBN-6D-eCa"/>
+                                            <constraint firstAttribute="trailing" secondItem="I4G-kH-1YQ" secondAttribute="trailing" constant="5" id="Uo1-JM-b2o"/>
                                             <constraint firstItem="gUu-zI-rJs" firstAttribute="leading" secondItem="r0s-gu-pX2" secondAttribute="leadingMargin" id="dh7-Os-5F1"/>
+                                            <constraint firstAttribute="bottom" secondItem="I4G-kH-1YQ" secondAttribute="bottom" constant="5" id="dm5-9m-Ofw"/>
+                                            <constraint firstItem="I4G-kH-1YQ" firstAttribute="leading" secondItem="r0s-gu-pX2" secondAttribute="leading" constant="5" id="jxV-FK-Fbs"/>
                                             <constraint firstAttribute="centerY" secondItem="I4G-kH-1YQ" secondAttribute="centerY" id="o5b-eU-B9o"/>
                                             <constraint firstAttribute="centerX" secondItem="Su2-PV-FWP" secondAttribute="centerX" id="y0o-7I-4YS"/>
                                             <constraint firstAttribute="centerY" secondItem="Su2-PV-FWP" secondAttribute="centerY" id="zgd-K1-3ys"/>
@@ -137,7 +137,7 @@
                                                 <constraint firstAttribute="width" constant="160" id="hA8-Iq-r5L"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-3n-Kgt">
@@ -255,13 +255,13 @@
                                                 <constraint firstAttribute="height" constant="35" id="kPW-UL-uje"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-JP-BfG">
                                             <rect key="frame" x="16" y="50" width="576" height="86"/>
                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1go-jL-hNb">

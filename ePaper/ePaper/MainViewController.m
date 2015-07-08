@@ -134,6 +134,11 @@
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:nextItem, previousItem, nil];
 }
 
+- (void) willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [self.collectionView reloadData];
+}
+
 - (void) previousDay
 {
     // Get the previous day - this will always be successful
@@ -195,6 +200,8 @@
     }
 }
 
+#pragma mark UICollectionViewDelegate
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     pageNumber = (int)indexPath.item;
@@ -229,5 +236,24 @@
     return 1;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Get the width of the collection view after removing the padding
+    float collectionViewWidth = collectionView.frame.size.width - 20;
+    
+    // Divide this with the minimum desired width of the cell
+    int itemsInRow = collectionViewWidth / 220;
+    
+    // So we can fit "itemsInRow"
+    int desiredItemWidth = (collectionViewWidth - (itemsInRow - 1) * 10) / itemsInRow;
+    
+    // Now calculate the height of the item
+    int desiredItemHeight = (desiredItemWidth * 338) / 220;
+    
+    // Create size object from above and return
+    CGSize itemSize = CGSizeMake(desiredItemWidth, desiredItemHeight);
+    
+    return itemSize;
+}
 
 @end
