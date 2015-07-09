@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>82812689-F9E3-42A9-91B3-D84ED341517D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ePaper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6A4297096429E53654603072E2CC33C5F329AAB3</key>
+		<string>https://github.com/santhedan/TimesOfIndia_ePaper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ePaper/ePaper.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6A4297096429E53654603072E2CC33C5F329AAB3</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/santhedan/TimesOfIndia_ePaper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6A4297096429E53654603072E2CC33C5F329AAB3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6A4297096429E53654603072E2CC33C5F329AAB3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TimesOfIndia_ePaper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
