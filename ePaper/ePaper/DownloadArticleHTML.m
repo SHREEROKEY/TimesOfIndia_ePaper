@@ -13,7 +13,7 @@
 #define NEEDLE_1 @"<div id=\"divArtBody\""
 #define NEEDLE_2 @"<div id=\"divEmailsAndUrls\""
 
-#define HTML_SNIPPET @"\357\273\277<html><head><style>div {font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;} div#divArticleBlurb {font-size: 1.75em;} div#divArticleContent {font-size: 1.25em;}</style></head><body>%@</body></html>"
+#define HTML_SNIPPET @"\357\273\277<html><head><style>div {font-family: Frutiger, 'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, 'Helvetica Neue', Helvetica, Arial, sans-serif;} div#divArticleBlurb {font-weight: lighter; padding-bottom: 10px;} div#divArticleContent {font-weight: lighter;}</style></head><body>%@</body></html>"
 
 @implementation DownloadArticleHTML
 

@@ -28,6 +28,8 @@
     [super viewDidLoad];
     self.tableView.estimatedRowHeight = 145.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.layoutMargins = UIEdgeInsetsZero;
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
 }
 
 - (void) viewDidAppear:(BOOL)animated

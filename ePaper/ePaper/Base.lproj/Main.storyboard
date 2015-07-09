@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThumbnailCell" id="r0s-gu-pX2" customClass="ThumbnailCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.49999999999999961" contentMode="center" reuseIdentifier="ThumbnailCell" id="r0s-gu-pX2" customClass="ThumbnailCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -38,13 +38,13 @@
                                                     <rect key="frame" x="5" y="5" width="210" height="328"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-zI-rJs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-zI-rJs">
                                                     <rect key="frame" x="8" y="305" width="204" height="25"/>
                                                     <color key="backgroundColor" red="0.98039215690000003" green="0.76078431369999999" blue="0.3411764706" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="jCV-g4-KMG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-SemiBoldItalic" family="Gill Sans" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Su2-PV-FWP">
@@ -136,7 +136,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="Hjg-7F-leG"/>
                                                 <constraint firstAttribute="width" constant="160" id="hA8-Iq-r5L"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="GillSans-SemiBoldItalic" family="Gill Sans" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -146,7 +146,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="VlB-NW-DHq"/>
                                                 <constraint firstAttribute="width" constant="100" id="c5a-kK-feF"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -243,24 +243,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="145" id="GOB-aN-19w" customClass="ArticleCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="145" id="GOB-aN-19w" customClass="ArticleCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GOB-aN-19w" id="dpa-T6-1Kj">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ka2-FZ-awM">
-                                            <rect key="frame" x="16" y="8" width="524" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="kPW-UL-uje"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="15"/>
+                                            <rect key="frame" x="8" y="8" width="532" height="20"/>
+                                            <fontDescription key="fontDescription" name="GillSans-SemiBoldItalic" family="Gill Sans" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-JP-BfG">
-                                            <rect key="frame" x="16" y="50" width="576" height="86"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-JP-BfG">
+                                            <rect key="frame" x="8" y="35" width="584" height="101"/>
+                                            <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -280,12 +278,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ka2-FZ-awM" firstAttribute="top" secondItem="dpa-T6-1Kj" secondAttribute="top" constant="8" id="0AP-hY-2hG"/>
-                                        <constraint firstItem="cRP-JP-BfG" firstAttribute="leading" secondItem="dpa-T6-1Kj" secondAttribute="leading" constant="16" id="FNk-EI-Df4"/>
+                                        <constraint firstItem="cRP-JP-BfG" firstAttribute="leading" secondItem="dpa-T6-1Kj" secondAttribute="leading" constant="8" id="FNk-EI-Df4"/>
                                         <constraint firstItem="1go-jL-hNb" firstAttribute="leading" secondItem="Ka2-FZ-awM" secondAttribute="trailing" constant="8" id="Fpz-O6-Z4u"/>
                                         <constraint firstItem="1go-jL-hNb" firstAttribute="top" secondItem="dpa-T6-1Kj" secondAttribute="top" constant="8" id="HX7-Tz-rTm"/>
                                         <constraint firstItem="cRP-JP-BfG" firstAttribute="top" secondItem="Ka2-FZ-awM" secondAttribute="bottom" constant="7" id="I8E-yT-Yuq"/>
                                         <constraint firstAttribute="trailing" secondItem="cRP-JP-BfG" secondAttribute="trailing" constant="8" id="IeQ-Kq-wgm"/>
-                                        <constraint firstItem="Ka2-FZ-awM" firstAttribute="leading" secondItem="dpa-T6-1Kj" secondAttribute="leading" constant="16" id="Nok-JS-EhC"/>
+                                        <constraint firstItem="Ka2-FZ-awM" firstAttribute="leading" secondItem="dpa-T6-1Kj" secondAttribute="leading" constant="8" id="Nok-JS-EhC"/>
                                         <constraint firstAttribute="bottom" secondItem="cRP-JP-BfG" secondAttribute="bottom" constant="8" id="PYz-B8-cJN"/>
                                         <constraint firstAttribute="trailing" secondItem="1go-jL-hNb" secondAttribute="trailing" constant="8" id="QfW-gZ-5kn"/>
                                         <constraint firstAttribute="centerY" secondItem="1go-jL-hNb" secondAttribute="centerY" id="b8F-tz-Xsi"/>
@@ -302,6 +300,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="articleDetail" destination="cRP-JP-BfG" id="PBH-5P-zgJ"/>
                                     <outlet property="articleImgButton" destination="1go-jL-hNb" id="ypx-GG-LdQ"/>
