@@ -30,12 +30,12 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.layoutMargins = UIEdgeInsetsZero;
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    dispatch_after(100, dispatch_get_main_queue(), ^{[self.tableView reloadData];});
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +80,16 @@
     cell.articleImgButton.tag = indexPath.item;
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
