@@ -29,6 +29,13 @@
     UIBarButtonItem *previousItem;
     UIBarButtonItem *nextItem;
     NSMutableArray* pageArticleArray;
+    
+    int WidthInIpad;
+    int WidthInIphone;
+    int DesiredWidth;
+    
+    int ItemsInRowLandscape;
+    int ItemsInRowPortrait;
 }
 
 @end
@@ -119,6 +126,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    WidthInIpad = 330;
+    WidthInIphone = 220;
+    //
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        DesiredWidth = WidthInIpad;
+        ItemsInRowLandscape = 3;
+        ItemsInRowPortrait = 2;
+    }
+    else
+    {
+        DesiredWidth = WidthInIphone;
+        ItemsInRowLandscape = 2;
+        ItemsInRowPortrait = 1;
+    }
     //
     now = [NSDate date];
     //
@@ -184,6 +206,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:nil completion:^ (id <UIViewControllerTransitionCoordinatorContext> context) {
+        [self.collectionView.collectionViewLayout invalidateLayout];
+    }];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -242,13 +272,18 @@
     float collectionViewWidth = collectionView.frame.size.width - 20;
     
     // Divide this with the minimum desired width of the cell
-    int itemsInRow = collectionViewWidth / 220;
+    int itemsInRow = ItemsInRowPortrait; // For portrait
+    
+    if (collectionView.frame.size.width > collectionView.frame.size.height)
+    {
+        itemsInRow = ItemsInRowLandscape;
+    }
     
     // So we can fit "itemsInRow"
     int desiredItemWidth = (collectionViewWidth - (itemsInRow - 1) * 10) / itemsInRow;
     
     // Now calculate the height of the item
-    int desiredItemHeight = (desiredItemWidth * 338) / 220;
+    int desiredItemHeight = (desiredItemWidth * 1.5 * DesiredWidth) / DesiredWidth;
     
     // Create size object from above and return
     CGSize itemSize = CGSizeMake(desiredItemWidth, desiredItemHeight);
